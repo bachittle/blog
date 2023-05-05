@@ -3,15 +3,18 @@ import os
 
 # each file in content is a blog post, provided it has .md extension
 BLOG_POSTS = [
-    "hello"
+    "welcome"
 ]
+SRC_DIR = "content"
+BUILD_DIR = "build"
 
 for post in BLOG_POSTS:
-    in_post = "content/{}.md".format(post)
+    in_post = "{}/{}.md".format(SRC_DIR, post)
     print(in_post)
     with open(in_post, 'r') as f:
         text = f.read()
-        os.mkdir("build")
+        if not os.path.exists(BUILD_DIR):
+            os.mkdir(BUILD_DIR)
         html = markdown(text)
-        with open("build/{}.html".format(post), 'w') as out:
+        with open("{}/{}.html".format(BUILD_DIR, post), 'w') as out:
             out.write(html)
