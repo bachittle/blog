@@ -3,6 +3,7 @@ import os
 
 # each file in content is a blog post, provided it has .md extension
 BLOG_POSTS = [
+    "index",
     "welcome"
 ]
 SRC_DIR = "content"
