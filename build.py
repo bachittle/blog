@@ -6,7 +6,7 @@ BLOG_POSTS = [
     "welcome"
 ]
 SRC_DIR = "content"
-BUILD_DIR = "build"
+BUILD_DIR = "docs"
 
 for post in BLOG_POSTS:
     in_post = "{}/{}.md".format(SRC_DIR, post)
